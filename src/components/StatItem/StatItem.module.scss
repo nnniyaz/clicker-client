@@ -1,0 +1,31 @@
+.stats__item {
+  flex: 1 0 40%;
+  width: 150px;
+  height: 130px;
+  background-color: #1a56db;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-right: 10px;
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .stats__item__value {
+    font-size: 40px;
+    font-weight: 500;
+    color: white;
+  }
+
+  .stats__item__label {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+  }
+}

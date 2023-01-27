@@ -1,0 +1,25 @@
+.button {
+  width: 43%;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #1A56DB;
+  color: white;
+  user-select: none;
+  outline: none;
+  border: none;
+  transition: .15s linear;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: .15s linear;
+  }
+
+  &:active {
+    cursor: pointer;
+    transform: scale(.95);
+    color: rgba(255, 255, 255, .8);
+    background-color: #1848b7;
+    transition: .15s linear;
+  }
+}

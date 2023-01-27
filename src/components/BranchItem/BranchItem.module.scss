@@ -1,0 +1,110 @@
+.branch {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #1a56db;
+  border-radius: 10px;
+  margin-top: 20px;
+
+  .branch__icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 23px;
+    height: 23px;
+    transition: .1s linear;
+    cursor: pointer;
+
+    path {
+      fill: white;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      transition: .1s linear;
+    }
+
+    &:active {
+      transform: scale(0.9);
+      transition: .1s linear;
+    }
+  }
+
+  .branch__name {
+    width: 90%;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+  }
+
+  .branch__created__at {
+    font-size: 15px;
+    font-weight: 300;
+    color: white;
+    margin-top: 5px;
+  }
+
+  .branch__clicks__number {
+    width: 100%;
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1px);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.15s linear;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .modal__body {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .modal__title {
+      font-size: 20px;
+      font-weight: 500;
+      color: #1a56db;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .modal__buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+  }
+}
