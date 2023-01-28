@@ -58,6 +58,24 @@ export default class Store {
         }
     }
 
+    async editBranch(id: string, name: string) {
+        try {
+            const res = await BranchService.editBranch(id, name);
+
+            if (res.data?.success) {
+                addNotification({title: '', message: 'Филиал успешно изменен', type: 'success'})
+                await this.getAllBranches();
+                return true;
+            } else {
+                addNotification({title: '', message: res.data.message, type: 'warning'})
+                return false;
+            }
+        } catch (e) {
+            addNotification({title: 'Серверная ошибка', message: '', type: 'danger'})
+            return false;
+        }
+    }
+
     async deleteBranch(id: string) {
         try {
             const res = await BranchService.deleteBranch(id);

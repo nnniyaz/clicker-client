@@ -1,13 +1,16 @@
 import React, {useContext, useEffect, useRef} from 'react';
 import {IBranch} from "../../models/IBranch";
-import {ReactComponent as TrashIcon} from "../../assets/icons/trash.svg";
 import {observer} from "mobx-react-lite";
-import Button from "../Button/Button";
-import classes from "./BranchItem.module.scss";
 import {Context} from "../../index";
+import Button from "../Button/Button";
+import {ReactComponent as TrashIcon} from "../../assets/icons/trash.svg";
+import {ReactComponent as EditIcon} from "../../assets/icons/pencil-alt.svg";
+import classes from "./BranchItem.module.scss";
+import {useNavigate} from "react-router-dom";
 
 const BranchItem = observer(({branch}: { branch: IBranch }) => {
     const {store} = useContext(Context);
+    const navigate = useNavigate();
     const [isModalVisible, setIsModalVisible] = React.useState(false);
     const wrapperRef: any = useRef(null);
 
@@ -50,6 +53,7 @@ const BranchItem = observer(({branch}: { branch: IBranch }) => {
         <>
             <div className={classes.branch}>
                 <TrashIcon className={classes.branch__icon} onClick={() => setIsModalVisible(true)}/>
+                <EditIcon className={classes.branch__icon__edit} onClick={() => navigate(`edit/${branch.name}`)}/>
                 <div className={classes.branch__name}>{branch.name}</div>
                 <div className={classes.branch__created__at}>
                     {`Дата добавления: ${localDate}`}

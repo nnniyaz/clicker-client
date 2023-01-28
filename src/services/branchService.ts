@@ -9,6 +9,10 @@ class BranchService {
         return $api.post<DefaultResponse | ErrorResponse>('/cmd/branch-add', {name: branchName});
     }
 
+    static async editBranch (branchId: string, branchName: string): Promise<AxiosResponse<DefaultResponse | ErrorResponse>> {
+        return $api.post<DefaultResponse | ErrorResponse>('/cmd/branch-update', {id: branchId, newBranchName: branchName});
+    }
+
     static async deleteBranch (branchId: string): Promise<AxiosResponse<DefaultResponse | ErrorResponse>> {
         return $api.post<DefaultResponse | ErrorResponse>('/cmd/branch-delete', {id: branchId});
     }

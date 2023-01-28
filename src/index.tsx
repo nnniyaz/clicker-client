@@ -8,6 +8,7 @@ import Branch from "./pages/Branch";
 import BranchLogin from "./pages/BranchLogin";
 import Admin from "./pages/Admin";
 import AdminCreateBranch from "./pages/AdminCreateBranch";
+import AdminEditBranch from "./pages/AdminEditBranch";
 
 interface State {
     store: Store;
@@ -30,6 +31,7 @@ root.render(
                         <Route path={`branch/:name`} element={<Branch/>}/>
                         <Route path={'admin'} element={<Admin/>}/>
                         <Route path={'admin/add'} element={<AdminCreateBranch/>}/>
+                        <Route path={'admin/edit/:name'} element={<AdminEditBranch/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>
