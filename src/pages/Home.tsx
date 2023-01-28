@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Button from "../components/Button/Button";
 import {observer} from "mobx-react-lite";
 import {useNavigate} from "react-router-dom";
@@ -7,7 +7,7 @@ import PageAnimation from "../components/PageAnimation/PageAnimation";
 import {ReactComponent as ClickIcon} from "../assets/icons/cursor-click.svg";
 import classes from '../styles/Home.module.scss';
 
-const Home = observer(() => {
+const Home: FC = observer(() => {
     const navigate = useNavigate();
 
     const goToRoute = (path: string) => {

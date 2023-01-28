@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {FC, useContext, useEffect, useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {observer} from "mobx-react-lite";
 import {ReactComponent as ArrowCircleIcon} from "../assets/icons/arrow-circle-left.svg";
@@ -11,7 +11,7 @@ import Loader from "../components/Loader/Loader";
 
 import classes from '../styles/BranchLogin.module.scss';
 
-const BranchLogin = observer(() => {
+const BranchLogin: FC = observer(() => {
     const {store} = useContext(Context);
     const navigate = useNavigate();
     const defaultOptionLabel: string = 'Выберите филиал';

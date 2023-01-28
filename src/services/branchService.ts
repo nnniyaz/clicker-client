@@ -2,6 +2,7 @@ import $api from "../api/api";
 import {AxiosResponse} from "axios";
 import {DefaultResponse, GetAllBranches, GetOneBranch} from "../models/response/DataResponse";
 import {ErrorResponse} from "../models/response/ErrorResponse";
+import {IStats} from "../models/IStats";
 
 class BranchService {
     static async addBranch (branchName: string): Promise<AxiosResponse<DefaultResponse | ErrorResponse>> {

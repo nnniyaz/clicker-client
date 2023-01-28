@@ -1,4 +1,4 @@
-import React, {useContext, useMemo, useState} from 'react';
+import React, {FC, useContext, useState} from 'react';
 import {Link, useParams} from "react-router-dom";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
@@ -9,7 +9,7 @@ import {ReactComponent as ArrowCircleIcon} from "../assets/icons/arrow-circle-le
 
 import classes from '../styles/Branch.module.scss';
 
-const Branch = observer(() => {
+const Branch: FC = observer(() => {
     const {store} = useContext(Context);
 
     const {name} = useParams();

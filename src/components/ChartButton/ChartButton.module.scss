@@ -1,0 +1,23 @@
+.chart__button {
+  padding: 5px 15px;
+  border-right: 1px solid #1A56DB;
+  color: #1a56db;
+  transition: .1s linear;
+
+  &:first-child {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  &:last-child {
+    border-right: none;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &:hover {
+    background-color: #1A56DB;
+    color: white;
+    transition: .1s linear;
+  }
+}

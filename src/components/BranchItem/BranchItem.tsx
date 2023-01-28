@@ -11,6 +11,9 @@ const BranchItem = observer(({branch}: { branch: IBranch }) => {
     const [isModalVisible, setIsModalVisible] = React.useState(false);
     const wrapperRef: any = useRef(null);
 
+    const time = new Date(branch?.createdAt).getTime() || 0;
+    const localDate = time === 0 ? '-' : new Date(time).toLocaleDateString();
+
     useEffect(() => {
         /**
          * Alert if clicked on outside of element
@@ -49,7 +52,7 @@ const BranchItem = observer(({branch}: { branch: IBranch }) => {
                 <TrashIcon className={classes.branch__icon} onClick={() => setIsModalVisible(true)}/>
                 <div className={classes.branch__name}>{branch.name}</div>
                 <div className={classes.branch__created__at}>
-                    {`Дата добавления: ${new Date(branch.createdAt).toLocaleString() || '-'}`}
+                    {`Дата добавления: ${localDate}`}
                 </div>
                 <div className={classes.branch__clicks__number}>{branch.clicksNumber || 0}</div>
             </div>

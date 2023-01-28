@@ -3,6 +3,7 @@ import {IBranch} from "../models/IBranch";
 import BranchService from "../services/branchService";
 import {addNotification} from "../utils/notification";
 import ClickService from "../services/clickService";
+import {IStats} from "../models/IStats";
 
 export default class Store {
     branches: IBranch[] = []
@@ -78,6 +79,20 @@ export default class Store {
     async getOneBranch(id: string) {
         try {
             const res = await BranchService.getOneBranch(id);
+
+            if (res.data?.success) {
+                return res.data?.data;
+            } else {
+                addNotification({title: '', message: res.data.message, type: 'warning'})
+            }
+        } catch (e) {
+            addNotification({title: 'Серверная ошибка', message: '', type: 'danger'})
+        }
+    }
+
+    async getStats(): Promise<IStats | undefined> {
+        try {
+            const res = await ClickService.getStats();
 
             if (res.data?.success) {
                 return res.data?.data;

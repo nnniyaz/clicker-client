@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {FC, useContext} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
@@ -9,7 +9,7 @@ import {ReactComponent as ArrowCircleIcon} from "../assets/icons/arrow-circle-le
 import classes from '../styles/AdminCreateBranch.module.scss';
 import PageAnimation from "../components/PageAnimation/PageAnimation";
 
-const AdminCreateBranch = observer(() => {
+const AdminCreateBranch: FC = observer(() => {
     const {store} = useContext(Context);
     const navigate = useNavigate();
 

@@ -1,9 +1,10 @@
 import React from 'react';
-import StatItem from "../StatItem/StatItem";
+import {observer} from "mobx-react-lite";
 import {IStat} from "../../models/IStat";
 
+import StatItem from "../StatItem/StatItem";
+
 import classes from "./Stats.module.scss";
-import {observer} from "mobx-react-lite";
 
 const Stats = observer(({stats}: { stats: IStat[] }): JSX.Element => {
     return (

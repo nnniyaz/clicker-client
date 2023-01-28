@@ -82,6 +82,51 @@
       flex-direction: column;
       align-items: center;
       padding: 20px 0;
+
+      .tabs {
+        width: 100%;
+        margin-top: 30px;
+
+        .tabList {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          border-bottom: 2px solid #1a56db;
+
+          .tab {
+            all: unset;
+            padding: 10px 20px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            color: #1a56db;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: .1s linear;
+
+            &:hover {
+              background-color: #1a56db;
+              color: white;
+              transition: .1s linear;
+            }
+          }
+
+          .tab__active {
+            all: unset;
+            padding: 10px 20px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            background-color: #1a56db;
+            color: white;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: .1s linear;
+          }
+        }
+
+        .tabPanel {
+          width: 100%;
+        }
+      }
     }
   }
 }
