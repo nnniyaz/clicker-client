@@ -113,7 +113,10 @@ export default class Store {
 
     async getStats(): Promise<IStats | undefined> {
         try {
-            const res = await ClickService.getStats();
+            const time = new Date().getTime();
+            const localDate = new Date(time).toString();
+
+            const res = await ClickService.getStats(localDate);
 
             if (res.data?.success) {
                 return res.data?.data;

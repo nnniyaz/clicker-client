@@ -17,8 +17,8 @@ class ClickService {
         return $api.post<GetAllClicks | ErrorResponse>('/cmd/click-get-all', {branchName: branchName});
     }
 
-    static async getStats(): Promise<AxiosResponse<IStatsResponse | ErrorResponse>> {
-        return $api.get<IStatsResponse | ErrorResponse>('/q/click-stats');
+    static async getStats(currentTime: string): Promise<AxiosResponse<IStatsResponse | ErrorResponse>> {
+        return $api.post<IStatsResponse | ErrorResponse>('/q/click-stats', {currentTime: currentTime});
     }
 }
 
