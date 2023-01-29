@@ -42,7 +42,10 @@ export default class Store {
 
     async addBranch(name: string) {
         try {
-            const res = await BranchService.addBranch(name);
+            const time = new Date().getTime();
+            const localDate = new Date(time).toString();
+
+            const res = await BranchService.addBranch(name, localDate);
 
             if (res.data?.success) {
                 addNotification({title: '', message: 'Филиал успешно добавлен', type: 'success'})
@@ -124,7 +127,10 @@ export default class Store {
 
     async addClick(branchName: string) {
         try {
-            const res = await ClickService.addClick(branchName);
+            const time = new Date().getTime();
+            const localDate = new Date(time).toString();
+
+            const res = await ClickService.addClick(branchName, localDate);
 
             if (res.data?.success) {
                 await this.getAllBranches();

@@ -5,8 +5,8 @@ import {ErrorResponse} from "../models/response/ErrorResponse";
 import {IStats} from "../models/IStats";
 
 class BranchService {
-    static async addBranch (branchName: string): Promise<AxiosResponse<DefaultResponse | ErrorResponse>> {
-        return $api.post<DefaultResponse | ErrorResponse>('/cmd/branch-add', {name: branchName});
+    static async addBranch (branchName: string, createdAt: string): Promise<AxiosResponse<DefaultResponse | ErrorResponse>> {
+        return $api.post<DefaultResponse | ErrorResponse>('/cmd/branch-add', {name: branchName, createdAt: createdAt});
     }
 
     static async editBranch (branchId: string, branchName: string): Promise<AxiosResponse<DefaultResponse | ErrorResponse>> {

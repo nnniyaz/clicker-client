@@ -5,8 +5,8 @@ import {ErrorResponse} from "../models/response/ErrorResponse";
 import {IStats, IStatsResponse} from "../models/IStats";
 
 class ClickService {
-    static async addClick (branchName: string): Promise<AxiosResponse<DefaultResponse | ErrorResponse>> {
-        return $api.post<DefaultResponse | ErrorResponse>('/cmd/click-add', {branchName: branchName});
+    static async addClick (branchName: string, createdAt: string): Promise<AxiosResponse<DefaultResponse | ErrorResponse>> {
+        return $api.post<DefaultResponse | ErrorResponse>('/cmd/click-add', {branchName: branchName, createdAt: createdAt});
     }
 
     static async removeClick (branchName: string): Promise<AxiosResponse<DefaultResponse | ErrorResponse>> {
