@@ -68,7 +68,7 @@ const Branch: FC = observer(() => {
                                 <div className={classes.container__inner}>
                                     <div className={classes.container__subtitle}>{currentBranch.name || '-'}</div>
                                     <div className={classes.container__subtitle}>Количество кликов за сегодня</div>
-                                    <div className={classes.container__title}>{currentBranch.clicksNumber || 0}</div>
+                                    <div className={classes.container__title}>{currentBranch.todayClicksNumber || 0}</div>
                                     <div className={classes.container__row} style={{
                                         pointerEvents: disabled ? 'none' : 'auto',
                                         opacity: disabled ? 0.5 : 1
