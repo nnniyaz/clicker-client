@@ -27,6 +27,7 @@ const Branch: FC = observer(() => {
         setDisabled(true);
 
         if (!currentBranch) {
+            setDisabled(false);
             return;
         }
 
@@ -43,11 +44,13 @@ const Branch: FC = observer(() => {
         setDisabled(true);
 
         if (!currentBranch) {
+            setDisabled(false);
             return;
         }
 
         if (currentBranch.todayClicksNumber === 0) {
             addNotification({title: '', message: 'За сегодня кликов не было', type: 'info'});
+            setDisabled(false);
             return;
         }
 
