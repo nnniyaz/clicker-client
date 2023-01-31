@@ -45,6 +45,10 @@ const Branch: FC = observer(() => {
             return;
         }
 
+        if (currentBranch.todayClicksNumber === 0) {
+            return;
+        }
+
         await store.removeClick(currentBranch.name).finally(() => {
             setDisabled(false);
         });
