@@ -8,6 +8,7 @@ import Button from "../components/Button/Button";
 import {ReactComponent as ArrowCircleIcon} from "../assets/icons/arrow-circle-left.svg";
 
 import classes from '../styles/Branch.module.scss';
+import {addNotification} from "../utils/notification";
 
 const Branch: FC = observer(() => {
     const {store} = useContext(Context);
@@ -46,6 +47,7 @@ const Branch: FC = observer(() => {
         }
 
         if (currentBranch.todayClicksNumber === 0) {
+            addNotification({title: '', message: 'За сегодня кликов не было', type: 'info'});
             return;
         }
 
